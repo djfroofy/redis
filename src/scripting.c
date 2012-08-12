@@ -405,10 +405,11 @@ void luaLoadLibraries(lua_State *lua) {
     luaLoadLib(lua, "cjson", luaopen_cjson);
     luaLoadLib(lua, "struct", luaopen_struct);
     luaLoadLib(lua, "cmsgpack", luaopen_cmsgpack);
-
-#if 0 /* Stuff that we don't load currently, for sandboxing concerns. */
     luaLoadLib(lua, LUA_LOADLIBNAME, luaopen_package);
     luaLoadLib(lua, LUA_OSLIBNAME, luaopen_os);
+    luaLoadLib(lua, LUA_IOLIBNAME, luaopen_io);
+
+#if 0 /* Stuff that we don't load currently, for sandboxing concerns. */
 #endif
 }
 
